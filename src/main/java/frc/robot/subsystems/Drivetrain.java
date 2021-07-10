@@ -9,19 +9,19 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase
 {
-    CANSparkMax lf = new CANSparkMax(0, MotorType.kBrushless);
-    CANSparkMax rf = new CANSparkMax(1, MotorType.kBrushless);
-    CANSparkMax lb = new CANSparkMax(2, MotorType.kBrushless);
-    CANSparkMax rb = new CANSparkMax(3, MotorType.kBrushless);
+	CANSparkMax lf = new CANSparkMax(0, MotorType.kBrushless);
+	CANSparkMax rf = new CANSparkMax(1, MotorType.kBrushless);
+	CANSparkMax lb = new CANSparkMax(2, MotorType.kBrushless);
+	CANSparkMax rb = new CANSparkMax(3, MotorType.kBrushless);
 
-    DifferentialDrive dt = new DifferentialDrive
-    (
-        new SpeedControllerGroup(lf, lb),
-        new SpeedControllerGroup(rf, rb)
-    );
+	DifferentialDrive dt = new DifferentialDrive
+	(
+		new SpeedControllerGroup(lf, lb),
+		new SpeedControllerGroup(rf, rb)
+	);
 
-    public void drive(double xSpeed, double zRotation)
-    {
-        dt.arcadeDrive(xSpeed, zRotation);
-    }
+	public void drive(double xSpeed, double zRotation)
+	{
+		dt.arcadeDrive(xSpeed, zRotation);
+	}
 }
