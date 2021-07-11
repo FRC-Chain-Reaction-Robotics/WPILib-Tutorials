@@ -1,4 +1,4 @@
-package frc.robot.subsystems;
+package frc.robot.subsystems.drivetrains;
 
 import com.revrobotics.*;
 import com.revrobotics.CANSparkMax.IdleMode;
@@ -23,11 +23,10 @@ public class Drivetrain extends SubsystemBase
 	
 	Gyro gyro = new ADXRS450_Gyro(SPI.Port.kOnboardCS0);
 	
-	DifferentialDrive dt = new DifferentialDrive
-	(
-		new SpeedControllerGroup(lf, lb),
-		new SpeedControllerGroup(rf, rb)
-	);
+	SpeedControllerGroup leftMotors = new SpeedControllerGroup(lf, lb);
+	SpeedControllerGroup rightMotors = new SpeedControllerGroup(rf, rb);
+	
+	DifferentialDrive dt = new DifferentialDrive(leftMotors, rightMotors);
 
 	public static final double AUTON_MAX_OUTPUT = 1.0;	//	TODO: tune maxoutputs
 	public static final double TELEOP_MAX_OUTPUT = 1.0;
@@ -47,9 +46,12 @@ public class Drivetrain extends SubsystemBase
 		//	2. See what distance is printed to SmartDashboard when you move.
 		//	3. Set the value to 1 / (whatever distance was printed, should be a number in range of 10-50 or so)
 		//	4. Repeat steps 1 and 2 and check if the distance traveled is the same as the distance measured.
-		final double positionConversionFactor = 1.0;
-		lfEncoder.setPositionConversionFactor(positionConversionFactor);	//	TODO: tune
-		lfEncoder.setPositionConversionFactor(positionConversionFactor);
+		final double conversionFactor = 1.0;	//	TODO: tune
+		
+		lfEncoder.setPositionConversionFactor(conversionFactor);
+		lfEncoder.setPositionConversionFactor(conversionFactor);
+		lfEncoder.setVelocityConversionFactor(conversionFactor);
+		lfEncoder.setVelocityConversionFactor(conversionFactor);
 
 
 		rf.setInverted(true);	//	change as necessary

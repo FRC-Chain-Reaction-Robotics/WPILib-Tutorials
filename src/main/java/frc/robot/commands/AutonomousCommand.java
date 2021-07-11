@@ -3,8 +3,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.drive.DriveToDistanceCommand;
 import frc.robot.commands.drive.TurnToAngleCommand;
-import frc.robot.subsystems.*;
-
+import frc.robot.subsystems.drivetrains.*;
 public class AutonomousCommand extends SequentialCommandGroup
 {
     public AutonomousCommand(Drivetrain dt)

@@ -18,4 +18,13 @@ public final class Constants
 	public static final int RF_MOTOR_ID = 2;
 	public static final int LB_MOTOR_ID = 3;
 	public static final int RB_MOTOR_ID = 4;
+	
+	//	ADVANCED! These are example values. For trajectory folllowing. TODO: frc-robot-characterization
+	public static final double ksVolts = 0.22;
+	public static final double kvVoltSecondsPerMeter = 1.98;
+	public static final double kaVoltSecondsSquaredPerMeter = 0.2;
+	public static final double kMaxSpeedMetersPerSecond = 3;
+	public static final double kMaxAccelerationMetersPerSecondSquared = 3;
+	// Example value only - as above, this must be tuned for your drive!
+	public static final double kPDriveVel = 8.5;
 }

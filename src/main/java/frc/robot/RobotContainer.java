@@ -7,7 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import frc.robot.commands.AutonomousCommand;
-import frc.robot.subsystems.*;
+import frc.robot.subsystems.drivetrains.*;
 import edu.wpi.first.wpilibj2.command.*;
 
 /**
@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj2.command.*;
 public class RobotContainer
 {
 	// The robot's subsystems and commands are defined here...
-	Drivetrain dt = new Drivetrain();
+	AdvancedDrivetrain dt = new AdvancedDrivetrain();
 	XboxController driverController = new XboxController(0);
 
 	/** The container for the robot. Contains subsystems, OI devices, and commands. */
